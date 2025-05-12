@@ -1,0 +1,298 @@
+/* Foundation.css */
+.foundation-container {
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  /* Hero Section */
+  .foundation-hero {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(rgba(0, 35, 82, 0.8), rgba(0, 35, 82, 0.9)), url('/images/education-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    padding: 0 2rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.2s ease-out;
+  }
+  
+  /* Section Common Styles */
+  .section {
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+    color: #002352;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .line {
+    height: 1px;
+    background-color: #ccc;
+    flex-grow: 1;
+  }
+  
+  .diamond {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    transform: rotate(45deg);
+    margin: 0 15px;
+    position: relative;
+  }
+  
+  .diamond::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #002352;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Foundation Content */
+  .foundation-content {
+    padding: 0 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .foundation-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+  }
+  
+  /* Founder Quote */
+  .founder-quote {
+    background-color: #002352;
+    padding: 3rem 0;
+    color: white;
+    margin-top: 4rem;
+  }
+  
+  .quote-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    text-align: center;
+  }
+  
+  .founder-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 2rem;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .quote-marks {
+    font-size: 6rem;
+    font-family: Georgia, serif;
+    line-height: 1;
+    opacity: 0.3;
+    position: absolute;
+  }
+  
+  .opening-quote {
+    top: -20px;
+    left: 0;
+  }
+  
+  .closing-quote {
+    bottom: -70px;
+    right: 0;
+  }
+  
+  .quote-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Core Values Section */
+  .core-values-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+  }
+  
+  .core-values-intro p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .values-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .value-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .value-icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f5ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .value-icon {
+    font-size: 2.5rem;
+    color: #002352;
+  }
+  
+  .value-title {
+    font-size: 1.5rem;
+    color: #002352;
+    margin-bottom: 1rem;
+  }
+  
+  .value-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Make founder quote responsive */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2rem;
+    }
+    
+    .quote-marks {
+      font-size: 4rem;
+    }
+    
+    .opening-quote {
+      top: -10px;
+    }
+    
+    .closing-quote {
+      bottom: -50px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .foundation-hero {
+      height: 300px;
+    }
+    
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+      font-size: 1rem;
+    }
+    
+    .founder-image {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .quote-text {
+      font-size: 1rem;
+    }
+    
+    .value-card {
+      min-width: 220px;
+    }
+  }

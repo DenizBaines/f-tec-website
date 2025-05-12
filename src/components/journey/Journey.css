@@ -1,0 +1,233 @@
+/* Journey.css */
+
+.journey-container {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;
+    background-position: center;
+    background-color: #083b66; /* Fallback color if image fails to load */
+    z-index: -1;
+    filter: brightness(0.8);
+}
+
+.hero-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 46, 95, 0.7);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.divider {
+    width: 30%;
+    margin: 1.5rem auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: #fff;
+    margin: 0 10px;
+}
+
+.diamond {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+/* Timeline Section Styles */
+.timeline-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #083b66;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    opacity: 0.7;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-item.active {
+    opacity: 1;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.marker-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid #083b66;
+    transition: all 0.3s ease;
+}
+
+.timeline-item.active .marker-circle {
+    background-color: #2196f3;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+}
+
+.timeline-content {
+    background-color: #083b66;
+    color: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.timeline-item.left .timeline-content {
+    margin-left: auto;
+    margin-right: 55%;
+    transform: translateX(50px);
+}
+
+.timeline-item.left.active .timeline-content {
+    transform: translateX(0);
+}
+
+.timeline-item.right .timeline-content {
+    margin-left: 55%;
+    transform: translateX(-50px);
+}
+
+.timeline-item.right.active .timeline-content {
+    transform: translateX(0);
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #90caf9;
+}
+
+.timeline-content h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .timeline-line {
+        left: 50px;
+    }
+    
+    .timeline-marker {
+        left: 50px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 100px);
+    }
+    
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+        margin-left: 100px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .timeline-line {
+        left: 30px;
+    }
+    
+    .timeline-marker {
+        left: 30px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 60px);
+    }
+    
+    .timeline-item.left .timeline-content,
+    .timeline-item.right .timeline-content {
+        margin-left: 60px;
+    }
+}
+
+/* Animation for timeline items when they become active */
+.timeline-item {
+    transform: translateY(30px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.timeline-item.active {
+    transform: translateY(0);
+}

@@ -1,0 +1,45 @@
+.home-page {
+    width: 100%;
+  }
+  
+  .home-content {
+    padding: 40px 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #1a335e;
+    text-align: left;
+  }
+  
+  .course-description {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .course-description p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .enroll-button {
+    background-color: #1a335e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .enroll-button:hover {
+    background-color: #0c1f3d;
+  }

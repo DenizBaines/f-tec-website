@@ -1,0 +1,139 @@
+.footer {
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  background-color: #002E5D;
+  color: #ffffff;
+}
+
+/* Footer Main Section */
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px 60px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 230px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Quick Links Section */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #cccccc;
+  text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-info {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin: 0 0 8px 0;
+}
+
+.company-name {
+  font-weight: 600;
+}
+
+.contact-info a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Follow Us Section */
+.social-icons {
+  display: inline-flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  color: #ffffff;
+  border-radius: 3px;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.social-icons a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #1A1A2E;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+  
+  .footer-section {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  .footer-section:last-child {
+    margin-bottom: 0;
+  }
+  
+  .social-icons {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main {
+    padding: 20px 15px;
+  }
+}
