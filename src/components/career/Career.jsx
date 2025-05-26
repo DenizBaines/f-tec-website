@@ -1,5 +1,7 @@
 import React from 'react';
 import './Career.css';
+import NavigationBar from '../navigation/NavigationBar';
+import Footer from '../footer/Footer';
 
 
 const Career = () => {
@@ -29,7 +31,10 @@ const Career = () => {
   ];
 
   return (
+    <div>
+    <NavigationBar />
     <div className="career-container">
+    
       {/* Hero Banner */}
       <div className="career-hero">
         <div className="career-hero-image">
@@ -82,6 +87,8 @@ const Career = () => {
       </div>
 
       {/* You can add a form section here for job applications if needed */}
+    </div>
+    <Footer />
     </div>
   );
 };

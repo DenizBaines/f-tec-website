@@ -1,0 +1,249 @@
+import React, { useState } from 'react';
+import './Ser.css';
+
+const Ser = () => {
+  const [activeService, setActiveService] = useState(null);
+
+  const servicesData = [
+    {
+      id: 1,
+      title: "Industrial Automation",
+      shortDesc: "Comprehensive automation solutions for manufacturing facilities.",
+      fullDesc: "Our industrial automation services provide end-to-end solutions to optimize your manufacturing processes. We integrate cutting-edge technologies to create smart factories that increase efficiency, reduce downtime, and maximize production quality.",
+      icon: "/images/serve.png",
+      features: [
+        "PLC Programming & Implementation",
+        "SCADA System Integration",
+        "HMI Design & Development",
+        "Robotics & Automated Systems",
+        "Motion Control Solutions",
+        "Factory Floor Digitization"
+      ],
+      benefits: [
+        "Increased operational efficiency",
+        "Reduced manual errors",
+        "Enhanced production quality",
+        "Real-time monitoring capabilities",
+        "Streamlined workflows"
+      ],
+      caseStudy: {
+        title: "Automotive Component Manufacturer",
+        description: "Implemented a fully automated production line that increased output by 35% while reducing quality issues by 40%."
+      },
+      image: "images/serve.png"
+    },
+    {
+      id: 2,
+      title: "Process Control",
+      shortDesc: "Advanced systems for precise control of industrial processes.",
+      fullDesc: "Our process control solutions enable precise management of industrial processes across various sectors. We design and implement systems that maintain optimal operating parameters, ensuring consistent product quality and reduced waste.",
+      icon: "/images/serve.png",
+      features: [
+        "Control Loop Design & Tuning",
+        "Process Instrumentation",
+        "Advanced Process Control",
+        "Batch Process Management",
+        "Distributed Control Systems",
+        "Process Optimization"
+      ],
+      benefits: [
+        "Enhanced product consistency",
+        "Optimized resource utilization",
+        "Reduced energy consumption",
+        "Improved safety compliance",
+        "Minimized process variability"
+      ],
+      caseStudy: {
+        title: "Chemical Processing Plant",
+        description: "Implemented precision control systems that reduced process variability by 60% and decreased energy usage by 25%."
+      },
+      image: "/images/serve.png"
+    },
+    {
+      id: 3,
+      title: "IoT & IIoT Solutions",
+      shortDesc: "Smart, connected industrial systems for the digital age.",
+      fullDesc: "Our IoT and Industrial IoT solutions connect your equipment, processes, and personnel into a unified, intelligent network. We implement systems that provide real-time data collection, analytics, and actionable insights to drive continuous improvement.",
+      icon: "/images/serve.png",
+      features: [
+        "Industrial Sensor Networks",
+        "Edge Computing Solutions",
+        "Cloud Integration",
+        "Real-time Analytics",
+        "Predictive Maintenance",
+        "Digital Twin Technology"
+      ],
+      benefits: [
+        "Remote monitoring capabilities",
+        "Predictive maintenance",
+        "Data-driven decision making",
+        "Reduced unplanned downtime",
+        "Enhanced operational visibility"
+      ],
+      caseStudy: {
+        title: "Manufacturing Facility",
+        description: "Deployed an IIoT system that reduced maintenance costs by 30% and improved overall equipment effectiveness by 22%."
+      },
+      image: "/images/serve.png"
+    },
+    {
+      id: 4,
+      title: "Industry 4.0 Implementation",
+      shortDesc: "Strategic digital transformation for manufacturing excellence.",
+      fullDesc: "We guide organizations through their digital transformation journey with comprehensive Industry 4.0 implementation strategies. Our approach combines advanced technologies, process redesign, and change management to create smart, adaptive manufacturing environments.",
+      icon: "/images/serve.png",
+      features: [
+        "Digital Transformation Roadmaps",
+        "Smart Factory Design",
+        "Cyber-Physical Systems",
+        "Manufacturing Execution Systems",
+        "Supply Chain Digitization",
+        "Data Analytics & AI Integration"
+      ],
+      benefits: [
+        "Increased operational agility",
+        "Enhanced competitiveness",
+        "Improved resource efficiency",
+        "Greater production flexibility",
+        "Accelerated innovation cycles"
+      ],
+      caseStudy: {
+        title: "Electronics Manufacturer",
+        description: "Comprehensive digital transformation that resulted in 40% reduced time-to-market and 25% production cost savings."
+      },
+      image: "/images/serve.png"
+    },
+    
+    
+  ];
+
+  // Toggle service details
+  const toggleService = (id) => {
+    if (activeService === id) {
+      setActiveService(null);
+    } else {
+      setActiveService(id);
+      // Scroll to the detailed view after a short delay
+      setTimeout(() => {
+        document.getElementById(`service-detail-${id}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  };
+
+  return (
+    <div className="services-page">
+      <div className="hero-section">
+       
+       
+        <div className="container">
+         
+          <img src="/images/journey.png" alt="Journey" className="hero-background" />
+          
+          <h1>Our Services</h1>
+          <p>Comprehensive industrial technology solutions to drive your business forward</p>
+          
+        </div>
+      </div>
+
+      <div className="services-overview container">
+        <div className="services-intro">
+          <h2>Driving Industrial Evolution</h2>
+          <p>
+            At F-Tec, we provide comprehensive industrial technology solutions designed to optimize
+            your operations, improve efficiency, and accelerate digital transformation. Our team of
+            experts works closely with you to identify your unique challenges and opportunities,
+            delivering customized solutions that meet your specific needs.
+          </p>
+        </div>
+
+        <div className="services-grid">
+          {servicesData.map(service => (
+            <div 
+              key={service.id} 
+              className={`service-card ${activeService === service.id ? 'active' : ''}`}
+              onClick={() => toggleService(service.id)}
+            >
+              <div className="service-icon">
+                <img src={`/images/${service.icon}`} alt={service.title} />
+              </div>
+              <h3>{service.title}</h3>
+              <p>{service.shortDesc}</p>
+              <div className="service-card-overlay">
+                <span>Learn More</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {activeService && (
+        <div className="service-detail-section" id={`service-detail-${activeService}`}>
+          <div className="container">
+            {servicesData.filter(service => service.id === activeService).map(service => (
+              <div className="service-detail" key={`detail-${service.id}`}>
+                <div className="service-detail-header">
+                  <h2>{service.title}</h2>
+                  <button className="close-btn" onClick={() => setActiveService(null)}>×</button>
+                </div>
+                
+                <div className="service-detail-content">
+                  <div className="service-detail-info">
+                    <p className="service-description">{service.fullDesc}</p>
+                    
+                    <div className="service-features">
+                      <h3>Key Capabilities</h3>
+                      <ul>
+                        {service.features.map((feature, index) => (
+                          <li key={index}>{feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="service-benefits">
+                      <h3>Benefits</h3>
+                      <ul>
+                        {service.benefits.map((benefit, index) => (
+                          <li key={index}>{benefit}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="service-case-study">
+                      <h3>Success Story</h3>
+                      <h4>{service.caseStudy.title}</h4>
+                      <p>{service.caseStudy.description}</p>
+                    </div>
+                    
+                    <div className="service-action">
+                     
+                      <a href={`/services/${service.id}`} className="contact-btn">Learn More</a>
+                    </div>
+                  </div>
+                  
+                  <div className="service-detail-image">
+                    <img src={service.image} alt={service.title} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      
+      
+      <div className="cta-section">
+        <div className="container">
+          <h2>Ready to Transform Your Operations?</h2>
+          <p>Contact our team to discuss how our services can help your business achieve its goals.</p>
+          <div className="cta-buttons">
+            <a href="/contact" className="primary-btn">Contact Us</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Ser;

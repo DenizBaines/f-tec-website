@@ -1,5 +1,7 @@
 import React from 'react';
 import './Achieve.css';
+import Footer from '../footer/Footer';
+import NavigationBar from '../navigation/NavigationBar';
 
 const Achieve = () => {
   // Achievement data
@@ -43,7 +45,10 @@ const Achieve = () => {
   ];
 
   return (
+    <div>
+    
     <div className="achieve-container">
+      <NavigationBar />
       {/* Hero Banner */}
       <div className="hero-banner">
         <img 
@@ -56,15 +61,17 @@ const Achieve = () => {
       {/* Main Content */}
       <div className="achieve-content">
         <h1 className="achieve-title">ACHIEVEMENTS & RECOGNITIONS</h1>
-        
+        {/*  
         <div className="divider">
           <hr className="divider-line" />
           <span className="diamond">◈</span>
           <hr className="divider-line" />
         </div>
+        */}
         
         <p className="achieve-intro">
-          Since 1995, the F-TEC journey has been an evolving story of a social enterprise model with many achievements & milestones as a training company.
+        Since 1995, the F-TEC journey has been an evolving story of a social enterprise 
+        model with many achievements & milestones as a training company.
         </p>
         
         {/* Achievement Cards */}
@@ -87,6 +94,8 @@ const Achieve = () => {
           ))}
         </div>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };

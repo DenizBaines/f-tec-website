@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Journey.css';
+import NavigationBar from '../navigation/NavigationBar';
+import Footer from '../footer/Footer';
 
 const Journey = () => {
     const [activePhase, setActivePhase] = useState(0);
@@ -9,25 +11,25 @@ const Journey = () => {
             id: 1,
             period: "1995 - 2000",
             title: "Foundation",
-            content: "Since commencement of the organizations journey on 16TH February, 1995, within the first six years after foundation, system procedures & core values were inculcated. Initial authentication of Proof of Concept (PoC) was successfully established through a standalone training centre at Vikas Puri, New Delhi. During this period, the organisation further developed five training centres across Delhi to provide affordable quality training while also retaining profitability of its centres."
+            content: "Since Commencement Of The Organizations Journey On 16TH February, 1995, Within The First Six Years After Foundation, System Procedures & Core Values Were Inculcated. Initial Authentication Of Proof Of Concept (PoC) Was Successfully Established Through A Standalone Training Centre At Vikas Puri, New Delhi. During This Period, The Organisation Further Developed Five Training Centres Across Delhi To Provide Affordable Quality Training While Also Retaining Profitability Of Its Centres."
         },
         {
             id: 2,
             period: "2000 - 2007",
             title: "Expansion",
-            content: "After successful implementation of the PoC model in five training centres, F-TEC initiated an aggressive expansion campaign by introducing 'Social Franchise Model' wherein first-generation entrepreneurs were invited as 'Partners in Progress' with F-TEC. This unique business initiative translated into the F-TEC network multiplying manifold its strength to 150 training centres across India especially in Jaipur, Chandigarh, Lucknow, Hyderabad, Ahmedabad, Kolkata & Mumbai. During this growth phase, F-TEC evolved into a 'Self-Sustained Social Enterprise Model' from a training institution in the field of skill development. Further positive utilization of revenue generated to create a rural development model in the state of Haryana for rural women, youth & elected Panchayat members."
+            content: "After Successful Implementation Of The PoC Model In Five Training Centres, F-TEC Initiated An Aggressive Expansion Campaign By Introducing “Social Franchise Model” Wherein First-Generation Entrepreneurs Were Invited As ‘Partners In Progress’ With F-TEC. This Unique Business Initiative Translated Into The F-TEC Network Multiplying Manifold Its Strength To 150 Training Centres Across India Especially In Jaipur, Chandigarh, Lucknow, Hyderabad, Ahmedabad, Kolkata & Mumbai. During This Growth Phase, F-TEC Evolved Into A ‘Self-Sustained Social Enterprise Model’ From A Training Institution In The Field Of Skill Development. Further Positive Utilization Of Revenue Generated To Create A Rural Development Model In The State Of Haryana For Rural Women, Youth & Elected Panchayat Members."
         },
         {
             id: 3,
             period: "2007 - 2014",
             title: "Transformation",
-            content: "In this phase, F-TEC witnessed a transformation from an IT training social enterprise model into a multi skilling enterprise based on emerging market requirements for trained professionals in new sectors like retail, banking & finance. Keeping in mind, increased employment opportunities in new sectors, F-TEC conducted an aspiration study and launched a new product portfolio combining both industry needs & youth aspirations. These new programs were introduced in IT & ITES, retail, banking & computerized accounting."
+            content: "In This Phase, F-TEC Witnessed A Transformation From An IT Training Social Enterprise Model Into A Multi Skilling Enterprise Based On Emerging Market Requirements For Trained Professionals In New Sectors Like Retail, Banking & Finance. Keeping In Mind, Increased Employment Opportunities In New Sectors, F-TEC Conducted An Aspiration Study And Launched A New Product Portfolio Combining Both Industry Needs & Youth Aspirations. These New Programs Were Introduced In IT & ITES, Retail, Banking & Computerized Accounting."
         },
         {
             id: 4,
             period: "2014 Onwards",
             title: "National Integration",
-            content: "As a part of the emerging skill eco system, F-TEC entered into partnership with NSDC (National Skill Development Cooperation) and began offering programs based on National Skill Qualification Framework (NSQF). During this phase, F-TEC ventured into different skill development projects with NSDC, Ministries & State Governments. Presently, F-TEC is offering skill programs to students from 9th Standard to UG level as well as offering Bachelor in Vocational Studies (B.VOC)."
+            content: "As A Part Of The Emerging Skill Eco System, F-TEC Entered Into Partnership With NSDC (National Skill Development Cooperation) And Began Offering Programs Based On National Skill Qualification Framework (NSQF). During This Phase, F-TEC Ventured Into Different Skill Development Projects With NSDC, Ministries & State Governments. Presently, F-TEC Is Offering Skill Programs To Students From 9th Standard To UG Level As Well As Offering Bachelor In Vocational Studies (B.VOC)."
         }
     ];
 
@@ -59,19 +61,16 @@ const Journey = () => {
     }, []);
 
     return (
+         <div>
         <div className="journey-container">
+           <NavigationBar />
             {/* Hero Banner Section */}
             <div className="hero-section">
-                <div className="hero-image">
-                    <div className="overlay">
-                        <img src="/images/journey-path.jpg" alt="Journey" />
-                    </div>
-                </div>
-                <h1>OUR JOURNEY</h1>
-                <div className="divider">
-                    <span className="diamond"></span>
-                </div>
+                     <img src="/images/journey.png" alt="Journey" className="hero-background" />
+                     <div className="hero-overlay"></div>
+                     <h1 className="hero-text">Our Journey</h1>
             </div>
+
 
             {/* Timeline Section */}
             <div className="timeline-container" ref={timelineRef}>
@@ -95,6 +94,8 @@ const Journey = () => {
                 ))}
             </div>
         </div>
+        <Footer />
+         </div>
     );
 };
 

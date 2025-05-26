@@ -19,6 +19,9 @@ import Operations from './components/operations/Operations';
 import Leadership from './components/leadership/Leadership';
 import Achieve from './components/achieve/Achieve';
 import Founder from './components/founder/Founder';
+import Centers from './components/centers/Centers';
+import Ser from './components/ser/Ser';
+import JobPost1 from './components/jobpost/JobPost1';
 
 
 
@@ -42,6 +45,9 @@ function App() {
         <Route path="/leadership" element={<Leadership />} />
         <Route path="/achieve" element={<Achieve />} />
         <Route path="/founder" element={<Founder />} />
+        <Route path="/centers" element={<Centers />} />
+         <Route path="/ser" element={<Ser />} />
+         <Route path="/jobpost" element={<JobPost1 />} />
         {/* <Route path="/insights" element={<Insights />} /> */}
         {/* Add more routes as needed */}
        

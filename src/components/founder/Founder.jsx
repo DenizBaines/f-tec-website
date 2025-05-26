@@ -1,9 +1,12 @@
 import React from 'react';
 import './Founder.css';
 import Footer from '../footer/Footer';
+import NavigationBar from '../navigation/NavigationBar';
 
 const Founder = () => {
   return (
+    <div>
+       <NavigationBar />
     <div className="founder-page">
 
       <div className="team-banner">
@@ -15,16 +18,16 @@ const Founder = () => {
       <div className="hero-section">
         <div className="container">
           <div className="quote-container">
-            <div className="quote-marks">"</div>
+            
             <p className="hero-quote">
               We do not claim to be a Non-Profit Organisation but strongly believe that quality training & affordable cost can truly co-exist with fair profit margins. With our journey of more than two decades, we have been able to create and sustain a social enterprise model in the area of training.
             </p>
-            <div className="quote-marks quote-end">"</div>
+         
           </div>
           
           <div className="founder-profile">
             <div className="founder-image-container">
-              <img src="/api/placeholder/400/400" alt="Praveen Arya" className="founder-image" />
+              <img src="images/circle-image.jpg" alt="Praveen Arya" className="founder-image" />
             </div>
             <h2 className="founder-name">Praveen Arya</h2>
             <p className="founder-title">Founder</p>
@@ -102,12 +105,13 @@ const Founder = () => {
       </div>
       
       
-              <Footer />
+              
             
             
           </div>
         
-    
+    <Footer />
+    </div>
     
   );
 };

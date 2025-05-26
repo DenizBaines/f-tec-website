@@ -1,109 +1,110 @@
-// NavigationBar.jsx
-import React, { useState, useEffect } from 'react';
-import './NavigationBar.css';
+import React, { useState } from "react";
+import "./NavigationBar.css";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const NavigationBar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Close mobile menu when window is resized to desktop size
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768 && isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
-      }
-    };
+  const pageNames = [
+    { name: "Home", link: "/" },
+    { name: "Careers", link: "/career" },
+    { name: "About", link: "/about" },
+    { name: "Achievements & Recognitions", link: "/achieve" },
+    { name: "Centers", link: "/centers" },
+    { name: "Foundation", link: "/founder" },
+    { name: "Journey", link: "/journey" },
+    { name: "Leadership", link: "/leadership" },
+    { name: "Partners", link: "/partners" },
+    { name: "Privacy & Policy", link: "/privacy" },
+    { name: "Projects", link: "/projects" },
+    { name: "Services", link: "/ser" },
+  ];
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isMobileMenuOpen]);
+  const menuItems = [
+    { name: "Home", link: "/" },
+    {
+      name: "About Us",
+      dropdown: [
+        { name: "About Us", link: "/about" },
+        { name: "Foundation", link: "/founder" },
+        { name: "Leadership", link: "/leadership" },
+        { name: "Achievements & Recognitions", link: "/achieve" },
+      ],
+    },
+    { name: "Journey", link: "/journey" },
+    { name: "Centers", link: "/centers" },
+    { name: "Careers", link: "/career" },
+  ];
 
-  // Toggle mobile menu and close search if open
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    if (isSearchVisible) setIsSearchVisible(false);
-  };
+  const filteredPages = pageNames.filter(page =>
+    page.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-  // Toggle search and close mobile menu if open
-  const toggleSearch = () => {
-    setIsSearchVisible(!isSearchVisible);
-    if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+  const handleSearchNavigate = (page) => {
+    window.location.href = page.link;
   };
 
   return (
-    <>
-      <nav className="navbar">
-        <div className="navbar-left">
-          <a href="/" className="logo">
-            <img src="/images/logo.png" alt="F-TEC Logo" />
-          </a>
-        </div>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <a href="/" className="navbar-logo">
+          <img src="/images/logo.png" alt="Logo" />
+        </a>
+      </div>
 
-        <div className="navbar-center">
-          <ul className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-            <li className="nav-item">
-              <div className="nav-item-wrapper">
-                <a href="/about">ABOUT</a>
-                <ul className="dropdown">
-                  <li><a href="/about-us">About Us</a></li>
-                  <li><a href="/foundation">Foundation</a></li>
-                  <li><a href="/leadership">Leadership</a></li>
-                  <li><a href="/achieve">Achievements</a></li>
-                </ul>
-              </div>
-            </li>
-            <li className="nav-item">
-              <div className="nav-item-wrapper">
-                <a href="/journey">JOURNEY</a>
-              </div>
-            </li>
-            <li className="nav-item">
-              <div className="nav-item-wrapper">
-                <a href="/projects">PROJECTS</a>
-              </div>
-            </li>
-            <li className="nav-item">
-              <div className="nav-item-wrapper">
-                <a href="/services">SERVICES</a>
-              </div>
-            </li>
-            <li className="nav-item">
-              <div className="nav-item-wrapper">
-                <a href="/operations">OPERATIONS</a>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <div className="navbar-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+      </div>
 
-        <div className="navbar-right">
-          <button className="search-toggle-button" onClick={toggleSearch}>
-            SEARCH IT
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
+      <ul className={`navbar-menu ${mobileMenuOpen ? "active" : ""}`}>
+        {menuItems.map((item, index) => (
+          <li key={index} className="navbar-item">
+            {item.link ? (
+              <a href={item.link}>{item.name}</a>
+            ) : (
+              <span>{item.name}</span>
+            )}
+            {item.dropdown && (
+              <div className="dropdown-menu">
+                {item.dropdown.map((subItem, idx) => (
+                  <a key={idx} className="dropdown-item" href={subItem.link}>
+                    {subItem.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
 
-          <button className="mobile-menu-icon" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
-        </div>
-      </nav>
+      <div className="navbar-search-area">
+        <button className="search-it-button" onClick={() => setSearchOpen(!searchOpen)}>
+          Search It
+        </button>
 
-      {isSearchVisible && (
-        <div className="search-bar">
-          <input type="text" placeholder="Search F-TEC..." aria-label="Search" />
-          <button aria-label="Submit search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-        </div>
-      )}
-    </>
+        {searchOpen && (
+          <div className="search-dropdown">
+            <input
+              type="text"
+              placeholder="Search a page..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            {searchTerm && (
+              <ul className="autocomplete-list">
+                {filteredPages.map((page, idx) => (
+                  <li key={idx} onClick={() => handleSearchNavigate(page)}>
+                    {page.name}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+      </div>
+    </nav>
   );
 };
 

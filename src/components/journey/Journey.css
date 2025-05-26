@@ -1,80 +1,95 @@
 /* Journey.css */
 
 .journey-container {
-    width: 100%;
-    overflow-x: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Hero Section Styles */
+/* Hero Section */
 .hero-section {
-    position: relative;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 50px;
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    background-size: cover;
-    background-position: center;
-    background-color: #083b66; /* Fallback color if image fails to load */
-    z-index: -1;
-    filter: brightness(0.8);
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.7);
 }
 
-.hero-image .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 46, 95, 0.7);
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: rgba(8, 59, 103, 0.1); /* just enough darkness */
+  z-index: 1;
 }
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+
+
+
+
+
 
 .hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-    z-index: 1;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  z-index: 1;
 }
 
+/* Divider (optional if needed) */
 .divider {
-    width: 30%;
-    margin: 1.5rem auto;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  width: 30%;
+  margin: 1.5rem auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
-.divider::before, .divider::after {
-    content: "";
-    flex-grow: 1;
-    height: 1px;
-    background-color: #fff;
-    margin: 0 10px;
+.divider::before,
+.divider::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background-color: #fff;
+  margin: 0 10px;
 }
 
 .diamond {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border: 2px solid #fff;
-    transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  transform: rotate(45deg);
 }
+
+/* ... keep the rest of your timeline CSS unchanged ... */
+
 
 /* Timeline Section Styles */
 .timeline-container {

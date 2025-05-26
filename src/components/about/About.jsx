@@ -1,22 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import './About.css';
+import NavigationBar from '../navigation/NavigationBar';
+import Footer from '../footer/Footer';
 
 const About = () => {
   return (
+    <div>
+      <NavigationBar />
     <div className="about-container">
-      {/* Top Hero Image */}
+    
       <div className="hero-image">
-        <img src="/images/about/hero-banner.jpg" alt="F-TEC Campus Overview" />
-        <div className="hero-overlay">
-          <h1>About F-TEC</h1>
-        </div>
+        <img src="/images/about/about.png" alt="F-TEC Campus Overview" />
+        
       </div>
 
       {/* About Section */}
       <div className="about-section">
         <div className="image-container">
-          <img src="/images/about/about-image.jpg" alt="Students at F-TEC" />
+          <img src="/images/about/story.jpg" alt="Students at F-TEC" />
         </div>
         <div className="content-container">
           <h2>Our Story</h2>
@@ -40,7 +42,7 @@ const About = () => {
 
       {/* First Strip Image */}
       <div className="strip-image">
-        <img src="/images/about/campus-strip.jpg" alt="F-TEC Campus Panorama" />
+        <img src="/images/about/nation.jpg" alt="F-TEC Campus Panorama" />
       </div>
 
       {/* Vision and Mission Section */}
@@ -64,20 +66,20 @@ const About = () => {
           </div>
         </div>
         <div className="vm-image">
-          <img src="/images/about/vision-mission.jpg" alt="F-TEC Innovation Lab" />
+          <img src="/images/about/vision.png" alt="F-TEC Innovation Lab" />
         </div>
       </div>
       
       {/* Second Strip Image */}
       <div className="strip-image">
-        <img src="/images/about/facilities-strip.jpg" alt="F-TEC Facilities" />
+        <img src="/images/about/think.jpg" alt="F-TEC Facilities" />
       </div>
 
       {/* Video and Tour Section */}
       <div className="video-tour-section">
         <div className="video-container">
-          <div className="video-thumbnail" onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}>
-            <img src="/images/about/video-thumbnail.jpg" alt="F-TEC Campus Tour Video" />
+          <div className="video-thumbnail" onClick={() => window.open('https://youtu.be/1VROjEDld0I', '_blank')}>
+            <img src="/images/about/thumbnail.png" alt="F-TEC Campus Tour Video" />
             <div className="play-button">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="45" fill="rgba(0,0,0,0.7)" />
@@ -97,9 +99,12 @@ const About = () => {
             technology innovation centers to our recreational spaces, every aspect of F-TEC is 
             carefully crafted to provide an optimal environment for learning and growth.
           </p>
-          <Link to="/campus-tour" className="tour-button">Book a Live Tour</Link>
+        
         </div>
       </div>
+    </div>
+
+    <Footer />
     </div>
   );
 };

@@ -1,9 +1,12 @@
 import React from 'react';
 import './Leadership.css';
 import Footer from '../footer/Footer';
+import NavigationBar from '../navigation/NavigationBar';
 
 const Leadership = () => {
   return (
+    <div>
+    <NavigationBar />
     <div className="leadership-container">
           
           {/* Team Banner Image */}
@@ -80,6 +83,8 @@ const Leadership = () => {
       </div>
 
       <Footer />
+    </div>
+
     </div>
   );
 };

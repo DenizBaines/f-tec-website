@@ -1,6 +1,8 @@
 // components/Partners/Partners.jsx
 import React from 'react';
 import './Partners.css';
+import Footer from '../footer/Footer';
+import NavigationBar from '../navigation/NavigationBar';
 
 const partners = [
   {
@@ -47,6 +49,8 @@ const partners = [
 
 const Partners = () => {
   return (
+    <div>
+       <NavigationBar />
     <div className="partners">
       <h1>Our Partners</h1>
       <p className="partners-intro">
@@ -65,6 +69,10 @@ const Partners = () => {
           </div>
         ))}
       </div>
+      
+    </div>
+
+    <Footer />
     </div>
   );
 };

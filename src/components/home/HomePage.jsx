@@ -1,29 +1,33 @@
 import React from 'react';
-import UpperNavigation from '../navigation/UpperNavigation';
+
 import NavigationBar from '../navigation/NavigationBar';
 import HomePageCarousel from './HomePageCarousel';
 // import OurProjects from '../../projects/OurProjects';
 import Footer from '../footer/Footer';
 import './HomePage.css';
+import Frontpage from '../frontpage/Frontpage';
 
 const HomePage = () => {
   return (
     <div className="home-page">
-      <UpperNavigation />
+      
       <NavigationBar />
       <HomePageCarousel />
       <div className="home-content">
         <div className="container">
-          <h1>F-TEC DIPLOMA IN DIGITAL LEARNING & MIS ANALYSIS</h1>
+          <h1>F-TEC AT A GLANCE - In Service to the Nation Since 1995</h1>
           <div className="course-description">
             <p>
-              Enhance your skills in digital learning and management information systems analysis
-              with our comprehensive diploma program. Designed for professionals looking to advance
-              their career in educational technology and data analysis.
+            F-TEC Skill Development is an initiative of Foresight Edutech Private Limited, a NSDC partner Company. F-TEC as training organisation was set-up in 1995 to cater the demands of IT skilled workforce which over the time evolved as a training and Multi-Skilling company working extensively to support Skill India Mission.
             </p>
             <button className="enroll-button">Enroll Now</button>
+
+           
           </div>
         </div>
+        <div className="frontpage">
+          <Frontpage /> 
+          </div>
       </div>
       
       

@@ -18,7 +18,7 @@ const Footer = () => {
             <li><Link to="/about">About F-TEC</Link></li>
             <li><Link to="/journey">Journey</Link></li>
             <li><Link to="/projects">Projects</Link></li>
-            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/ser">Services</Link></li>
             <li><Link to="/operations">Business Opportunities</Link></li>
             <li><Link to="/career">Career</Link></li>
             <li><Link to="/partners">Our Partners</Link></li>

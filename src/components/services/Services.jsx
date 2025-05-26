@@ -10,7 +10,7 @@ const Services = () => {
       title: "Industrial Automation",
       shortDesc: "Comprehensive automation solutions for manufacturing facilities.",
       fullDesc: "Our industrial automation services provide end-to-end solutions to optimize your manufacturing processes. We integrate cutting-edge technologies to create smart factories that increase efficiency, reduce downtime, and maximize production quality.",
-      icon: "automation-icon.svg",
+      icon: "images/serve.png",
       features: [
         "PLC Programming & Implementation",
         "SCADA System Integration",
@@ -30,14 +30,14 @@ const Services = () => {
         title: "Automotive Component Manufacturer",
         description: "Implemented a fully automated production line that increased output by 35% while reducing quality issues by 40%."
       },
-      image: "/images/industrial-automation.jpg"
+      image: "/images/serve.png"
     },
     {
       id: 2,
       title: "Process Control",
       shortDesc: "Advanced systems for precise control of industrial processes.",
       fullDesc: "Our process control solutions enable precise management of industrial processes across various sectors. We design and implement systems that maintain optimal operating parameters, ensuring consistent product quality and reduced waste.",
-      icon: "process-control-icon.svg",
+      icon: "/images/serve.png",
       features: [
         "Control Loop Design & Tuning",
         "Process Instrumentation",
@@ -57,14 +57,14 @@ const Services = () => {
         title: "Chemical Processing Plant",
         description: "Implemented precision control systems that reduced process variability by 60% and decreased energy usage by 25%."
       },
-      image: "/images/process-control.jpg"
+      image: "/images/serve.png"
     },
     {
       id: 3,
       title: "IoT & IIoT Solutions",
       shortDesc: "Smart, connected industrial systems for the digital age.",
       fullDesc: "Our IoT and Industrial IoT solutions connect your equipment, processes, and personnel into a unified, intelligent network. We implement systems that provide real-time data collection, analytics, and actionable insights to drive continuous improvement.",
-      icon: "iot-icon.svg",
+      icon: "/images/serve.png",
       features: [
         "Industrial Sensor Networks",
         "Edge Computing Solutions",
@@ -84,14 +84,14 @@ const Services = () => {
         title: "Manufacturing Facility",
         description: "Deployed an IIoT system that reduced maintenance costs by 30% and improved overall equipment effectiveness by 22%."
       },
-      image: "/images/iot-solutions.jpg"
+      image: "/images/serve.png"
     },
     {
       id: 4,
       title: "Industry 4.0 Implementation",
       shortDesc: "Strategic digital transformation for manufacturing excellence.",
       fullDesc: "We guide organizations through their digital transformation journey with comprehensive Industry 4.0 implementation strategies. Our approach combines advanced technologies, process redesign, and change management to create smart, adaptive manufacturing environments.",
-      icon: "industry4-icon.svg",
+      icon: "/images/serve.png",
       features: [
         "Digital Transformation Roadmaps",
         "Smart Factory Design",
@@ -111,14 +111,14 @@ const Services = () => {
         title: "Electronics Manufacturer",
         description: "Comprehensive digital transformation that resulted in 40% reduced time-to-market and 25% production cost savings."
       },
-      image: "/images/industry4-implementation.jpg"
+      image: "/images/serve.png"
     },
     {
       id: 5,
       title: "Energy Management",
       shortDesc: "Optimized energy utilization for sustainable manufacturing.",
       fullDesc: "Our energy management services help industrial facilities reduce consumption, optimize distribution, and transition to more sustainable sources. We implement monitoring and control systems that balance operational needs with environmental responsibility.",
-      icon: "energy-icon.svg",
+      icon: "/images/serve.png",
       features: [
         "Energy Auditing & Monitoring",
         "Power Quality Management",
@@ -138,14 +138,14 @@ const Services = () => {
         title: "Food Processing Plant",
         description: "Implemented an integrated energy management system that reduced consumption by 32% and enabled certification to ISO 50001 standards."
       },
-      image: "/images/energy-management.jpg"
+      image: "/images/serve.png"
     },
     {
       id: 6,
       title: "Consulting & Integration",
       shortDesc: "Expert guidance and seamless systems integration.",
       fullDesc: "Our consulting and integration services provide expert guidance through technical challenges and opportunities. We help bridge legacy systems with modern technologies, ensuring seamless operations while leveraging existing investments.",
-      icon: "consulting-icon.svg",
+      icon: "/images/serve.png",
       features: [
         "Technology Assessment",
         "Legacy System Integration",
@@ -165,7 +165,7 @@ const Services = () => {
         title: "Pharmaceutical Manufacturer",
         description: "Guided integration of legacy control systems with modern MES, preserving critical functionality while enabling new capabilities."
       },
-      image: "/images/consulting-integration.jpg"
+      image: "/images/serve.png"
     }
   ];
 
