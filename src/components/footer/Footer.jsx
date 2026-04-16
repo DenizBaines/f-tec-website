@@ -15,11 +15,12 @@ const Footer = () => {
         <div className="footer-section">
           <h3>QUICK LINKS</h3>
           <ul>
-            <li><Link to="/about">About F-TEC</Link></li>
+            <li><Link to="/about">About Us</Link></li>
             <li><Link to="/journey">Journey</Link></li>
             <li><Link to="/projects">Projects</Link></li>
             <li><Link to="/ser">Services</Link></li>
-            <li><Link to="/operations">Business Opportunities</Link></li>
+            <li><Link to="/formed">Enquire Us</Link></li>
+            <li><Link to="/achieve">Achievements</Link></li>
             <li><Link to="/career">Career</Link></li>
             <li><Link to="/partners">Our Partners</Link></li>
             <li><Link to="/privacy">Privacy Policy</Link></li>
@@ -40,16 +41,16 @@ const Footer = () => {
         <div className="footer-section">
           <h3>FOLLOW US</h3>
           <div className="social-icons">
-            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/FTECOnline/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF />
             </a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href="https://x.com/FTECOnline" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <FaTwitter />
             </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://in.linkedin.com/company/f-tec-skill-development" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedinIn />
             </a>
-            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <a href="https://www.youtube.com/channel/UCMYv2pK1iJUPHd7MfKE1BuA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <FaYoutube />
             </a>
           </div>

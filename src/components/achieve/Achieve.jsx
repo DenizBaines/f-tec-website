@@ -50,13 +50,13 @@ const Achieve = () => {
     <div className="achieve-container">
       <NavigationBar />
       {/* Hero Banner */}
-      <div className="hero-banner">
+     {/* <div className="hero-banner">
         <img 
           src="/images/achieve-top.png" 
           alt="Trophy with golden stars"
           className="hero-image"
-        />
-      </div>
+        /> 
+      </div> */}
 
       {/* Main Content */}
       <div className="achieve-content">

@@ -1,249 +1,92 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Ser.css';
+import Footer from '../footer/Footer';
+import NavigationBar from '../navigation/NavigationBar';
 
-const Ser = () => {
-  const [activeService, setActiveService] = useState(null);
-
-  const servicesData = [
+const Achieve = () => {
+  // Achievement data
+  const achievements = [
     {
       id: 1,
-      title: "Industrial Automation",
-      shortDesc: "Comprehensive automation solutions for manufacturing facilities.",
-      fullDesc: "Our industrial automation services provide end-to-end solutions to optimize your manufacturing processes. We integrate cutting-edge technologies to create smart factories that increase efficiency, reduce downtime, and maximize production quality.",
-      icon: "/images/serve.png",
-      features: [
-        "PLC Programming & Implementation",
-        "SCADA System Integration",
-        "HMI Design & Development",
-        "Robotics & Automated Systems",
-        "Motion Control Solutions",
-        "Factory Floor Digitization"
-      ],
-      benefits: [
-        "Increased operational efficiency",
-        "Reduced manual errors",
-        "Enhanced production quality",
-        "Real-time monitoring capabilities",
-        "Streamlined workflows"
-      ],
-      caseStudy: {
-        title: "Automotive Component Manufacturer",
-        description: "Implemented a fully automated production line that increased output by 35% while reducing quality issues by 40%."
-      },
-      image: "images/serve.png"
+      title: "DIGITAL MARKETING",
+      description: "F-TEC has developed an independent vertical working closely with F-TEC Skill Academy to provide 360 Degree Social Media Solutions with FB Marketing, Twitter Handle, LinkedIn Profile, Blogs and overall integrated Social Marketing Management across platforms.",
+      color: "blue"
     },
     {
       id: 2,
-      title: "Process Control",
-      shortDesc: "Advanced systems for precise control of industrial processes.",
-      fullDesc: "Our process control solutions enable precise management of industrial processes across various sectors. We design and implement systems that maintain optimal operating parameters, ensuring consistent product quality and reduced waste.",
-      icon: "/images/serve.png",
-      features: [
-        "Control Loop Design & Tuning",
-        "Process Instrumentation",
-        "Advanced Process Control",
-        "Batch Process Management",
-        "Distributed Control Systems",
-        "Process Optimization"
-      ],
-      benefits: [
-        "Enhanced product consistency",
-        "Optimized resource utilization",
-        "Reduced energy consumption",
-        "Improved safety compliance",
-        "Minimized process variability"
-      ],
-      caseStudy: {
-        title: "Chemical Processing Plant",
-        description: "Implemented precision control systems that reduced process variability by 60% and decreased energy usage by 25%."
-      },
-      image: "/images/serve.png"
+      title: "BRAND MANAGEMENT & PROMOTIONS",
+      description: "Merging its own experience onboard the organization, F-TEC has developed solution for promotion and management considering the brand as a live entity. A dedicated professional team closely works with companies and organizations to provide variety of services for management of the brand.",
+      color: "teal"
     },
     {
       id: 3,
-      title: "IoT & IIoT Solutions",
-      shortDesc: "Smart, connected industrial systems for the digital age.",
-      fullDesc: "Our IoT and Industrial IoT solutions connect your equipment, processes, and personnel into a unified, intelligent network. We implement systems that provide real-time data collection, analytics, and actionable insights to drive continuous improvement.",
-      icon: "/images/serve.png",
-      features: [
-        "Industrial Sensor Networks",
-        "Edge Computing Solutions",
-        "Cloud Integration",
-        "Real-time Analytics",
-        "Predictive Maintenance",
-        "Digital Twin Technology"
-      ],
-      benefits: [
-        "Remote monitoring capabilities",
-        "Predictive maintenance",
-        "Data-driven decision making",
-        "Reduced unplanned downtime",
-        "Enhanced operational visibility"
-      ],
-      caseStudy: {
-        title: "Manufacturing Facility",
-        description: "Deployed an IIoT system that reduced maintenance costs by 30% and improved overall equipment effectiveness by 22%."
-      },
-      image: "/images/serve.png"
+      title: "IMAGE CONSULTING",
+      description: "Carve a niche with image consulting as another objective of F-TEC for this specialized soft skill development training initiatives. With the belief that leaders in themselves are brands and they conciously need to manage same to drive the organization. We help individuals in leadership roles to manage individual brand to sync with the brand image of the organization.",
+      color: "green"
     },
     {
       id: 4,
-      title: "Industry 4.0 Implementation",
-      shortDesc: "Strategic digital transformation for manufacturing excellence.",
-      fullDesc: "We guide organizations through their digital transformation journey with comprehensive Industry 4.0 implementation strategies. Our approach combines advanced technologies, process redesign, and change management to create smart, adaptive manufacturing environments.",
-      icon: "/images/serve.png",
-      features: [
-        "Digital Transformation Roadmaps",
-        "Smart Factory Design",
-        "Cyber-Physical Systems",
-        "Manufacturing Execution Systems",
-        "Supply Chain Digitization",
-        "Data Analytics & AI Integration"
-      ],
-      benefits: [
-        "Increased operational agility",
-        "Enhanced competitiveness",
-        "Improved resource efficiency",
-        "Greater production flexibility",
-        "Accelerated innovation cycles"
-      ],
-      caseStudy: {
-        title: "Electronics Manufacturer",
-        description: "Comprehensive digital transformation that resulted in 40% reduced time-to-market and 25% production cost savings."
-      },
-      image: "/images/serve.png"
+      title: "CYBER SECURITY SOLUTIONS",
+      description: "We are currently living in a digital age where organizations are driven by technology resulting in enhanced efficency and faster information and data flows. However, this digitalization has a huge challenge in terms of data security for which F-TEC has developed a pool of cyber security experts of international repute with in-depth exposure to develop solutions for organizations to ensure data security on all their digital platforms.",
+      color: "green"
     },
-    
     
   ];
 
-  // Toggle service details
-  const toggleService = (id) => {
-    if (activeService === id) {
-      setActiveService(null);
-    } else {
-      setActiveService(id);
-      // Scroll to the detailed view after a short delay
-      setTimeout(() => {
-        document.getElementById(`service-detail-${id}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
-    }
-  };
-
   return (
-    <div className="services-page">
-      <div className="hero-section">
-       
-       
-        <div className="container">
-         
-          <img src="/images/journey.png" alt="Journey" className="hero-background" />
-          
-          <h1>Our Services</h1>
-          <p>Comprehensive industrial technology solutions to drive your business forward</p>
-          
-        </div>
+    <div>
+    
+    <div className="ser-achieve-container">
+      <NavigationBar />
+      {/* Hero Banner */}
+      <div className="ser-hero-banner">
+        <img 
+          src="/images/our-services.jpg" 
+          alt="Trophy with golden stars"
+          className="ser-hero-image"
+        />
       </div>
 
-      <div className="services-overview container">
-        <div className="services-intro">
-          <h2>Driving Industrial Evolution</h2>
-          <p>
-            At F-Tec, we provide comprehensive industrial technology solutions designed to optimize
-            your operations, improve efficiency, and accelerate digital transformation. Our team of
-            experts works closely with you to identify your unique challenges and opportunities,
-            delivering customized solutions that meet your specific needs.
-          </p>
+      {/* Main Content */}
+      <div className="ser-achieve-content">
+        <h1 className="ser-achieve-title">OUR SERVICES</h1>
+        {/*  
+        <div className="divider">
+          <hr className="divider-line" />
+          <span className="diamond">◈</span>
+          <hr className="divider-line" />
         </div>
-
-        <div className="services-grid">
-          {servicesData.map(service => (
+        */}
+        
+        <p className="ser-achieve-intro">
+        Since 1995, the F-TEC journey has been an evolving story of a social enterprise 
+        model with many achievements & milestones as a training company.
+        </p>
+        
+        {/* Achievement Cards */}
+        <div className="ser-achievement-grid">
+          {achievements.map((achievement) => (
             <div 
-              key={service.id} 
-              className={`service-card ${activeService === service.id ? 'active' : ''}`}
-              onClick={() => toggleService(service.id)}
+              key={achievement.id} 
+              className={`achievement-card ${achievement.color}`}
             >
-              <div className="service-icon">
-                <img src={`/images/${service.icon}`} alt={service.title} />
-              </div>
-              <h3>{service.title}</h3>
-              <p>{service.shortDesc}</p>
-              <div className="service-card-overlay">
-                <span>Learn More</span>
-              </div>
+              <h2 className="ser-card-title">{achievement.title}</h2>
+              <p className="ser-card-description">
+                {achievement.description.split('\n').map((text, i) => (
+                  <React.Fragment key={i}>
+                    {text}
+                    {i < achievement.description.split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </p>
             </div>
           ))}
         </div>
       </div>
-
-      {activeService && (
-        <div className="service-detail-section" id={`service-detail-${activeService}`}>
-          <div className="container">
-            {servicesData.filter(service => service.id === activeService).map(service => (
-              <div className="service-detail" key={`detail-${service.id}`}>
-                <div className="service-detail-header">
-                  <h2>{service.title}</h2>
-                  <button className="close-btn" onClick={() => setActiveService(null)}>×</button>
-                </div>
-                
-                <div className="service-detail-content">
-                  <div className="service-detail-info">
-                    <p className="service-description">{service.fullDesc}</p>
-                    
-                    <div className="service-features">
-                      <h3>Key Capabilities</h3>
-                      <ul>
-                        {service.features.map((feature, index) => (
-                          <li key={index}>{feature}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="service-benefits">
-                      <h3>Benefits</h3>
-                      <ul>
-                        {service.benefits.map((benefit, index) => (
-                          <li key={index}>{benefit}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="service-case-study">
-                      <h3>Success Story</h3>
-                      <h4>{service.caseStudy.title}</h4>
-                      <p>{service.caseStudy.description}</p>
-                    </div>
-                    
-                    <div className="service-action">
-                     
-                      <a href={`/services/${service.id}`} className="contact-btn">Learn More</a>
-                    </div>
-                  </div>
-                  
-                  <div className="service-detail-image">
-                    <img src={service.image} alt={service.title} />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-      
-      
-      
-      <div className="cta-section">
-        <div className="container">
-          <h2>Ready to Transform Your Operations?</h2>
-          <p>Contact our team to discuss how our services can help your business achieve its goals.</p>
-          <div className="cta-buttons">
-            <a href="/contact" className="primary-btn">Contact Us</a>
-            
-          </div>
-        </div>
-      </div>
+    </div>
+    <Footer />
     </div>
   );
 };
 
-export default Ser;
+export default Achieve;

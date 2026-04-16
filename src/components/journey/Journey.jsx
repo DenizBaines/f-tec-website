@@ -65,9 +65,9 @@ const Journey = () => {
         <div className="journey-container">
            <NavigationBar />
             {/* Hero Banner Section */}
-            <div className="hero-section">
-                     <img src="/images/journey.png" alt="Journey" className="hero-background" />
-                     <div className="hero-overlay"></div>
+            <div className="jr-hero-section">
+                     <img src="/images/journey2.jpg" alt="Journey" className="jr-hero-background" />
+                     <div className="jr-hero-overlay"></div>
                      <h1 className="hero-text">Our Journey</h1>
             </div>
 

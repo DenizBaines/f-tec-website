@@ -1,312 +1,220 @@
-/* Universal Box-Sizing */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Prevent Horizontal Scrolling on Body */
-body {
+/* Navbar.css — Final Fixes */
+body, html {
   overflow-x: hidden;
+  height: 100%;
 }
 
-/* Main Navigation Bar Container */
-.navbar {
+/* HEADER */
+.newjobs-navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: newjobs-fade-in 0.6s ease-out;
+  
+}
+
+.newjobs-navbar-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.newjobs-navbar-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.newjobs-nav-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
   display: flex;
-  align-items: center; /* Vertically align items */
-  justify-content: space-between; /* Space out logo, menu, and search */
-  padding: 12px 30px; /* Overall padding for the navbar */ 
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for modern look */
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-  position: relative;
-  z-index: 1000; /* Ensure navbar stays on top */
-  font-family: "Inter", sans-serif; /* Modern font */
-}
-
-/* Logo Styling */
-.navbar-logo img {
-  height: 36px; /* Default height for desktop */
-  width: auto;
-  object-fit: contain;
-  display: block;
-  padding: 0 15px 0 0; /* Padding around the logo, especially on the right */
-  margin: 0; /* Remove default margin */
-}
-
-/* Hamburger Toggle Icon (Hidden on Desktop) */
-.navbar-toggle {
-  display: none; /* Hidden by default on larger screens */
-  font-size: 28px; /* Larger icon for better tap target */
-  cursor: pointer;
-  padding: 8px; /* Padding around the icon */
-  margin-right: 10px; /* Space from the right edge */
-  color: #333; /* Icon color */
-}
-
-/* Navigation Menu */
-.navbar-menu {
-  display: flex;
-  list-style: none;
-  gap: 35px; /* Increased space between menu items */
+  justify-content: space-between;
   align-items: center;
-  margin: 0 auto; /* Center the menu horizontally */
-  flex-grow: 1; /* Allow menu to take available space */
-  justify-content: center; /* Center menu items within the menu */
+  flex-wrap: wrap;
 }
 
-.navbar-item {
-  position: relative;
-  font-size: 16px;
-  color: #4b4b4b;
-  cursor: pointer;
-  padding: 10px 15px; /* Increased padding for better clickability */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px; /* Rounded corners for menu items */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar-item a {
-  text-decoration: none;
-  color: inherit; /* Inherit color from parent */
-  display: block; /* Make the entire padding area clickable */
-}
-
-.navbar-item:hover {
-  background-color: #f0f0f0; /* Subtle hover background */
-  color: #003366; /* Darker blue on hover */
-}
-
-/* Dropdown Menu */
-.dropdown-menu {
-  position: absolute;
-  top: calc(100% + 10px); /* Position below the parent item with a small gap */
-  left: 50%; /* Center dropdown relative to parent */
-  transform: translateX(-50%) translateY(10px); /* Initial offset for slide-down effect */
-  background: white;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow */
-  border-radius: 8px;
-  padding: 10px 0;
-  min-width: 200px; /* Wider dropdown */
-  z-index: 100;
-  opacity: 0; /* Start hidden */
-  visibility: hidden; /* Start hidden */
-  pointer-events: none; /* Disable clicks when hidden */
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
-}
-
-.navbar-item:hover .dropdown-menu {
-  opacity: 1; /* Fade in */
-  visibility: visible; /* Make visible */
-  transform: translateX(-50%) translateY(0); /* Slide up to final position */
-  pointer-events: auto; /* Enable clicks when visible */
-}
-
-.dropdown-item {
-  padding: 12px 25px; /* More padding for dropdown items */
-  color: #333;
-  font-size: 15px;
-  display: block;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-}
-
-.dropdown-item:hover {
-  background-color: #e6f2ff; /* Light blue hover for dropdown items */
-  color: #003366;
-}
-
-/* Search Area */
-.navbar-search-area {
-  position: relative;
-  margin-left: auto; /* Push search area to the right */
+/* LOGO + SUBTEXT */
+.newjobs-brand-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  padding: 5px 0; /* Vertical padding for the search area */
+  align-items: flex-start;
+  gap: 0.2rem;
+  cursor: pointer;
+  z-index: 2002;
 }
 
-.search-it-button {
-  background-color: #003366;
+.newjobs-logo {
+  width: 190px;
+  transition: all 0.3s ease;
+  margin-left: 17px;
+}
+
+.newjobs-brand-subtext {
+  font-size: 0.85rem;
+  color: #444;
+  font-weight: 500;
+  margin-left: 0.5px;
+  margin-top: 5px;
+}
+
+/* NAV ITEMS */
+.newjobs-navigation-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 3000;
+}
+
+.newjobs-nav-item {
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.newjobs-nav-item:hover {
+  color: #3498db;
+}
+
+.newjobs-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  transition: width 0.3s ease;
+}
+
+.newjobs-nav-item:hover::after {
+  width: 100%;
+}
+
+/* CTA BUTTON */
+.newjobs-cta-button {
+  background: #002E5D;
   color: white;
   border: none;
-  padding: 8px 18px; /* Compact button size */
-  font-size: 15px;
-  font-weight: bold;
-  border-radius: 20px; /* Pill-shaped button */
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
-.search-it-button:hover {
-  background-color: #001f4d;
-  transform: translateY(-2px); /* Slight lift on hover */
+.newjobs-cta-button:hover {
+  transform: translateY(-2px);
+  background: red;
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
 }
 
-.search-dropdown {
-  /* Removed margin-top to ensure it floats directly below without pushing content */
-  width: 250px; /* Wider search bar */
-  animation: slideDown 0.3s ease-out forwards; /* Use forwards to keep final state */
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  position: absolute; /* Position relative to .navbar-search-area */
-  top: calc(100% + 10px); /* Position below the button with a small gap */
-  right: 0; /* Align to the right of the button */
-  z-index: 99; /* Below the main navbar */
-}
-
-.search-dropdown input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 15px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.search-dropdown input:focus {
-  border-color: #003366; /* Highlight on focus */
-}
-
-.autocomplete-list {
-  list-style: none;
-  margin-top: 10px;
-  padding: 0;
-  border: 1px solid #eee; /* Lighter border */
-  border-radius: 6px;
-  background-color: white;
-  max-height: 180px; /* Taller list */
-  overflow-y: auto;
-  width: 100%;
-}
-
-.autocomplete-list li {
-  padding: 10px;
+/* HAMBURGER */
+.newjobs-hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  font-size: 15px;
-  color: #555;
-  transition: background-color 0.2s, color 0.2s;
+  z-index: 3001;
 }
 
-.autocomplete-list li:hover {
-  background-color: #f5f5f5;
-  color: #003366;
+.newjobs-hamburger-line {
+  width: 100%;
+  height: 2px;
+  background: #2c3e50;
+  border-radius: 1px;
+  transition: all 0.3s ease;
 }
 
-/* Keyframe Animation for Search Dropdown */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.newjobs-hamburger-active .newjobs-hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+.newjobs-hamburger-active .newjobs-hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.newjobs-hamburger-active .newjobs-hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) { /* Adjust breakpoint for larger tablets */
-  .navbar-menu {
-    gap: 25px; /* Slightly less gap for smaller desktops/large tablets */
-  }
-  .navbar-item {
-    padding: 8px 12px;
-  }
-  .search-it-button {
-    padding: 7px 15px;
-    font-size: 14px;
-  }
-  .search-dropdown {
-    width: 220px;
-    padding: 12px;
-  }
+/* OVERLAY */
+.newjobs-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2000;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) { /* Tablet and Mobile */
-  .navbar {
-    padding: 10px 20px; /* Reduced padding for smaller screens */
-    justify-content: space-between; /* Ensure logo and toggle are spaced */
+.newjobs-overlay-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+  .newjobs-hamburger-btn {
+    display: flex;
   }
 
-  .navbar-logo img {
-    height: 30px; /* Smaller logo for mobile */
-    padding: 0 10px 0 0; /* Adjust padding */
+  .newjobs-navigation-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+    z-index: 3000;
+    overflow-y: auto;
   }
 
-  .navbar-toggle {
-    display: block; /* Show hamburger icon */
-    padding: 10px; /* Increased padding for better tap target */
-    margin-right: 5px; /* Small margin from right edge */
-    margin-left: 5px; /* Small margin from left edge */
+  .newjobs-mobile-menu-active {
+    right: 0;
   }
 
-  .navbar-menu {
-    display: none; /* Hide menu by default */
-    flex-direction: column; /* Stack items vertically */
-    width: 100%; /* Full width for mobile menu */
-    background-color: #f8f8f8; /* Light background for mobile menu */
-    padding: 10px 0;
-    margin-top: 10px;
-    position: absolute; /* Position below the navbar */
-    top: 100%;
-    left: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.3s ease-out forwards; /* Smooth slide down for menu */
+  .newjobs-cta-button {
+    display: none; /* ❌ Hide CTA on mobile */
   }
 
-  .navbar-menu.active {
-    display: flex; /* Show menu when active */
+  .newjobs-logo {
+    width: 80px;
   }
 
-  .navbar-item {
-    width: 100%; /* Full width for each item */
-    padding: 15px 25px; /* Generous padding for mobile items */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Separator */
-    justify-content: center; /* Center text within each mobile menu item */
-  }
-
-  .navbar-item:last-child {
-    border-bottom: none; /* No border on the last item */
-  }
-
-  .dropdown-menu {
-    position: static; /* Remove absolute positioning for mobile */
-    box-shadow: none; /* No shadow for nested mobile dropdown */
-    border-radius: 0;
-    background: #f0f0f0; /* Slightly darker background for nested items */
-    padding: 0 0 0 20px; /* Indent nested items */
-    min-width: auto; /* Auto width */
-    opacity: 1; /* Always visible when parent is expanded */
-    visibility: visible;
-    transform: none; /* No transform needed */
-    pointer-events: auto; /* Always clickable */
-    transition: none; /* No transition needed for static display */
-  }
-
-  .navbar-item:hover .dropdown-menu {
-    transform: none; /* Override hover transform */
-  }
-
-  .dropdown-item {
-    padding: 10px 15px; /* Adjust padding for nested mobile items */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03); /* Lighter separator */
-  }
-
-  .dropdown-item:last-child {
-    border-bottom: none;
-  }
-
-  .navbar-search-area {
-    display: none; /* Hide search button and bar on mobile */
+  .newjobs-brand-subtext {
+    font-size: 0.6rem;
+    display: none;;
   }
 }
 
-
-
+@media (max-width: 480px) {
+  .newjobs-logo {
+    width: 60px;
+  }
+}

@@ -3,6 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/home/HomePage';
 import './App.css';
 import About from './components/about/About';
+import News from './components/news/news';
+import ScrollToTop from './components/ScrollToTop';
+import Form from './components/form/Form';
+import Gallery from './components/gallery/Gallery';
+import Formed from './components/formed/formed';
+
 // Removed duplicate import of Institutions
 //import Footer from './components/footer/Footer';
 
@@ -28,7 +34,10 @@ import JobPost1 from './components/jobpost/JobPost1';
 
 function App() {
   return (
+    
+     
     <Router>
+    <> <ScrollToTop />
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -47,7 +56,12 @@ function App() {
         <Route path="/founder" element={<Founder />} />
         <Route path="/centers" element={<Centers />} />
          <Route path="/ser" element={<Ser />} />
+         <Route path="/news" element={<News />} />
+          <Route path="/form" element={<Form />} />
+          
+          <Route path="/gallery" element={<Gallery />} />
          <Route path="/jobpost" element={<JobPost1 />} />
+         <Route path="/formed" element={<Formed />} />
         {/* <Route path="/insights" element={<Insights />} /> */}
         {/* Add more routes as needed */}
        
@@ -57,7 +71,9 @@ function App() {
         </Routes>
        
       </div>
+      </>
     </Router>
+    
   );
 }
 

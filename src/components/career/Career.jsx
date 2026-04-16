@@ -1,94 +1,65 @@
-import React from 'react';
-import './Career.css';
-import NavigationBar from '../navigation/NavigationBar';
-import Footer from '../footer/Footer';
-
+import React from "react";
+import "./Career.css";
+import NavigationBar from "../navigation/NavigationBar";
+import Footer from "../footer/Footer";
 
 const Career = () => {
-  // Sample job posting data - in a real app, this would come from an API or props
-  const jobPostings = [
-    {
-      id: 1, 
-      date: { day: '02', month: 'JAN', year: '2019' },
-      location: 'Delhi',
-      title: 'Manager – Business Development',
-      url: '#'
-    },
-    {
-      id: 2, 
-      date: { day: '15', month: 'MAR', year: '2019' },
-      location: 'Mumbai',
-      title: 'Senior Training Coordinator',
-      url: '#'
-    },
-    {
-      id: 3, 
-      date: { day: '28', month: 'APR', year: '2019' },
-      location: 'Bangalore',
-      title: 'Technical Instructor - IT Skills',
-      url: '#'
-    }
-  ];
-
   return (
     <div>
-    <NavigationBar />
-    <div className="career-container">
-    
-      {/* Hero Banner */}
-      <div className="career-hero">
-        <div className="career-hero-image">
-          {/* This should be replaced with your actual image */}
-          <img src="/images/careers.jpg" alt="Careers at our company" />
-        </div>
-      </div>
+      <NavigationBar />
 
-      {/* Career Message */}
-      <div className="career-message">
-        <div className="message-container">
-          <p>
-            Pursue your aspirations, let go of your inhibitions to join a vibrant organisation and build your career with the fastest growing skill development & training organisation.
+      {/* Hero Section */}
+      <div className="career-hero">
+        <img
+          src="/images/careers.jpg"
+          alt="Join Our Team"
+          className="career-hero-img"
+        />
+        <div className="career-hero-overlay">
+          <h1 className="career-hero-title">Join Our Team</h1>
+          <p className="career-hero-subtitle">
+            Build your career with F-TEC Skill Development
           </p>
         </div>
       </div>
 
-      {/* Connect Section */}
-      <div className="connect-section">
-        <h2>CONNECT WITH US</h2>
-        
-        {/* Job Listings */}
-        <div className="job-listings">
-          {jobPostings.map(job => (
-            <div className="job-card" key={job.id}>
-              <div className="job-date">
-                <div className="date-box">
-                  <span className="day">{job.date.day}</span>
-                  <div className="month-year">
-                    <span className="month">{job.date.month}</span>
-                    <span className="year">,{job.date.year}</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="job-details">
-                <div className="job-location">
-                  <i className="location-icon">📍</i>
-                  <span>{job.location}</span>
-                </div>
-                <h3 className="job-title">{job.title}</h3>
-              </div>
+      {/* Join Us Section */}
+      <section className="career-join-section">
+        <div className="career-join-card">
+          <h2>We’re Always Looking for Passionate People</h2>
+          <p>
+            Join F-TEC Skill Development and be part of India’s fastest-growing
+            skill training ecosystem. Send us your updated resume — our team will
+            reach out to you soon.
+          </p>
 
-              <div className="job-action">
-                <a href={job.url} className="read-more-btn">READ MORE</a>
-              </div>
-            </div>
-          ))}
+          <div className="career-contact-info">
+            <h3>📍 CONTACT US</h3>
+            <p>
+              <strong>F-TEC SKILL DEVELOPMENT</strong>
+              <br />
+              AB-6, Safdarjung Enclave, <br />
+              New Delhi - 110029
+            </p>
+            <p>
+              <strong>Call:</strong> 011-40517335, 41094328 <br />
+              <strong>Email:</strong>{" "}
+              <a href="mailto:mailus@f-tec.net.in" className="career-email">
+                mailus@f-tec.net.in
+              </a>
+            </p>
+          </div>
+
+          <a
+            href="mailto:mailus@f-tec.net.in?subject=Resume%20Submission%20for%20F-TEC%20Careers"
+            className="career-btn"
+          >
+            Send Your Resume on above Email
+          </a>
         </div>
-      </div>
+      </section>
 
-      {/* You can add a form section here for job applications if needed */}
-    </div>
-    <Footer />
+      <Footer />
     </div>
   );
 };

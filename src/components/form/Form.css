@@ -1,0 +1,179 @@
+/* ===== F-TEC Modern Contact Form ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.form-container-ftec {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2f3 0%, #dfe9f3 100%);
+  padding: 4rem 1rem;
+}
+
+.form-wrapper-ftec {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.form-header-ftec {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.form-title-ftec {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #102e66;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle-ftec {
+  font-size: 1.15rem;
+  color: #444;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.form-content-ftec {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Left Info Cards */
+.form-info-ftec {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+.info-card-ftec {
+  background: #102e66;
+  color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card-ftec:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon-ftec {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Right Form Box */
+.modern-form-ftec {
+  flex: 1.5;
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-group-ftec {
+  margin-bottom: 1.3rem;
+}
+
+.form-label-ftec {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #102e66;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.form-input-ftec {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input-ftec:focus {
+  border-color: #4f4fc2;
+  box-shadow: 0 0 0 3px rgba(79, 79, 194, 0.15);
+  outline: none;
+}
+
+.form-input-ftec.error {
+  border-color: #e74c3c;
+  background-color: #fff6f6;
+}
+
+.form-error-ftec {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* Submit Button */
+.form-submit-ftec {
+  width: 100%;
+  background: linear-gradient(90deg, #4f4fc2 0%, #667eea 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form-submit-ftec:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 79, 194, 0.3);
+}
+
+/* Status Messages */
+.form-status-ftec {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-status-ftec.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.form-status-ftec.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .form-content-ftec {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-info-ftec {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .info-card-ftec {
+    flex: 1 1 250px;
+  }
+}

@@ -20,7 +20,7 @@ const HomePage = () => {
             <p>
             F-TEC Skill Development is an initiative of Foresight Edutech Private Limited, a NSDC partner Company. F-TEC as training organisation was set-up in 1995 to cater the demands of IT skilled workforce which over the time evolved as a training and Multi-Skilling company working extensively to support Skill India Mission.
             </p>
-            <button className="enroll-button">Enroll Now</button>
+            {/* <button className="enroll-button">Enroll Now</button> */}
 
            
           </div>
